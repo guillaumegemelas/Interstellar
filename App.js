@@ -140,6 +140,7 @@ export default function App() {
         {/* carroussel de photos */}
         <ScrollView
           horizontal={true}
+          showsHorizontalScrollIndicator={false}
           style={{ flexDirection: "row", marginLeft: 15 }}
         >
           <View style={styles.carrousselCard}>
