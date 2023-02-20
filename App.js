@@ -15,6 +15,9 @@ import Constants from "expo-constants";
 
 import logo from "./assets/logo.png";
 import film from "./assets/film.jpg";
+import matthew from "./assets/matthew.jpg";
+import anne from "./assets/anne.jpg";
+import jessica from "./assets/jessica.jpg";
 
 export default function App() {
   return (
@@ -103,6 +106,127 @@ export default function App() {
             </Text>
           </View>
         </View>
+        <View style={{ height: 20, backgroundColor: "#191919" }}></View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginBottom: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 21,
+              color: "white",
+              marginLeft: 15,
+              marginTop: 25,
+            }}
+          >
+            Top Billed Cast
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              color: "#0177BD",
+              marginRight: 15,
+              marginTop: 30,
+            }}
+          >
+            SEE ALL
+          </Text>
+        </View>
+        {/* carroussel de photos */}
+        <View style={{ flexDirection: "row", marginLeft: 15 }}>
+          <View style={styles.carrousselCard}>
+            <Image
+              source={matthew}
+              style={{ width: 140, height: 190, borderRadius: 5 }}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 12,
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+            >
+              Matthew McCon..
+            </Text>
+            <Text
+              style={{
+                color: "#A7A7A7",
+                fontSize: 11,
+                marginLeft: 10,
+                marginTop: 3,
+              }}
+            >
+              Cooper
+            </Text>
+          </View>
+          <View style={styles.carrousselCard}>
+            <Image
+              source={anne}
+              style={{ width: 140, height: 190, borderRadius: 5 }}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 12,
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+            >
+              Anne Hattaway
+            </Text>
+            <Text
+              style={{
+                color: "#A7A7A7",
+                fontSize: 11,
+                marginLeft: 10,
+                marginTop: 3,
+              }}
+            >
+              Brand
+            </Text>
+          </View>
+          <View style={styles.carrousselCard}>
+            <Image
+              source={jessica}
+              style={{ width: 140, height: 190, borderRadius: 5 }}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 12,
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+            >
+              Jessica Chastaing
+            </Text>
+            <Text
+              style={{
+                color: "#A7A7A7",
+                fontSize: 11,
+                marginLeft: 10,
+                marginTop: 3,
+              }}
+            >
+              Murph
+            </Text>
+          </View>
+        </View>
+
+        <View>
+          <Text style={styles.firstText}>Director</Text>
+          <Text style={styles.secondText}>Christopher Nolan</Text>
+        </View>
+        <View>
+          <Text style={styles.firstText}>Writers</Text>
+          <Text style={styles.secondText}>
+            Jonathan Nolan (written by) and Christopher Nolan (written by)
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -164,5 +288,27 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 120,
+  },
+
+  carrousselCard: {
+    height: 250,
+    width: 140,
+    backgroundColor: "#2A2A2A",
+    borderRadius: 5,
+    marginRight: 8,
+  },
+
+  firstText: {
+    color: "white",
+    fontSize: 13,
+    marginLeft: 10,
+    marginTop: 15,
+  },
+
+  secondText: {
+    color: "#A7A7A7",
+    fontSize: 11,
+    marginLeft: 10,
+    marginTop: 3,
   },
 });
