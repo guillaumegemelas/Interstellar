@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Platform,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 
 //package qui fournit des infos sur l'appareil
@@ -18,6 +19,7 @@ import film from "./assets/film.jpg";
 import matthew from "./assets/matthew.jpg";
 import anne from "./assets/anne.jpg";
 import jessica from "./assets/jessica.jpg";
+import matt from "./assets/matt.jpeg";
 
 export default function App() {
   return (
@@ -58,9 +60,9 @@ export default function App() {
                 l'espace dans le but de sauver l'humanité de l'extinction
               </Text>
             </View>
-            <View style={styles.watchView}>
+            <TouchableOpacity activeOpacity="0.8" style={styles.watchView}>
               <Text style={{ color: "white" }}>+ AJOUTER A LA LISTE</Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -136,21 +138,26 @@ export default function App() {
           </Text>
         </View>
         {/* carroussel de photos */}
-        <View style={{ flexDirection: "row", marginLeft: 15 }}>
+        <ScrollView
+          horizontal={true}
+          style={{ flexDirection: "row", marginLeft: 15 }}
+        >
           <View style={styles.carrousselCard}>
             <Image
               source={matthew}
               style={{ width: 140, height: 190, borderRadius: 5 }}
             />
             <Text
+              numberOfLines={1}
               style={{
                 color: "white",
                 fontSize: 12,
                 marginLeft: 10,
                 marginTop: 10,
+                marginRight: 10,
               }}
             >
-              Matthew McCon..
+              Matthew McConaughey
             </Text>
             <Text
               style={{
@@ -215,7 +222,34 @@ export default function App() {
               Murph
             </Text>
           </View>
-        </View>
+
+          <View style={styles.carrousselCard}>
+            <Image
+              source={matt}
+              style={{ width: 140, height: 190, borderRadius: 5 }}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 12,
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+            >
+              Matt Demon
+            </Text>
+            <Text
+              style={{
+                color: "#A7A7A7",
+                fontSize: 11,
+                marginLeft: 10,
+                marginTop: 3,
+              }}
+            >
+              Dr Mann
+            </Text>
+          </View>
+        </ScrollView>
 
         <View>
           <Text style={styles.firstText}>Director</Text>
@@ -226,6 +260,7 @@ export default function App() {
           <Text style={styles.secondText}>
             Jonathan Nolan (written by) and Christopher Nolan (written by)
           </Text>
+          <View style={{ marginBottom: 50 }}></View>
         </View>
       </ScrollView>
     </SafeAreaView>
