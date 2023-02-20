@@ -1,4 +1,5 @@
-import { StatusBar } from "expo-status-bar";
+import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   StyleSheet,
   Text,
@@ -59,6 +60,49 @@ export default function App() {
             </View>
           </View>
         </View>
+
+        {/* view avec notations et icones */}
+        <View style={styles.rate}>
+          <View style={styles.rateDetail}>
+            <MaterialCommunityIcons name="star" size={24} color="#E6B91F" />
+            <Text style={{ color: "white" }}>
+              <Text style={{ fontWeight: "bold", fontSize: 17 }}>8,6</Text>
+              <Text>/10</Text>
+            </Text>
+            <Text style={{ color: "#393939", fontSize: 12 }}> 1.1M</Text>
+          </View>
+          <View style={styles.rateDetail}>
+            <MaterialCommunityIcons
+              name="star-outline"
+              size={24}
+              color="white"
+            />
+            <Text style={{ color: "white" }}>
+              <Text style={{ fontSize: 15 }}>RATE THIS</Text>
+            </Text>
+            <Text></Text>
+          </View>
+
+          <View style={styles.rateDetail}>
+            <View
+              style={{
+                height: 35,
+                width: 35,
+                backgroundColor: "#61C750",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 18 }}>94</Text>
+            </View>
+            <Text style={{ color: "white" }}>
+              <Text>Metascore</Text>
+            </Text>
+            <Text style={{ color: "#393939", fontSize: 12 }}>
+              46 critics reviews
+            </Text>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -110,5 +154,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#0177BD",
     borderRadius: 4,
+  },
+  rate: {
+    flexDirection: "row",
+    flex: 1,
+  },
+  rateDetail: {
+    flex: 1 / 3,
+    justifyContent: "center",
+    alignItems: "center",
+    height: 120,
   },
 });
